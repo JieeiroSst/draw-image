@@ -28,9 +28,8 @@ func main() {
 	draw.Draw(dst, dst.Bounds(), img1, image.Point{0, 0}, draw.Src)
 	draw.Draw(dst, dst.Bounds(), img2, image.Point{0, 0}, draw.Src)
 
-	img := image.NewRGBA(image.Rect(0, 0, 100, 100))
 	buf := new(bytes.Buffer)
-	png.Encode(buf, img)
+	png.Encode(buf, dst)
 
 	fmt.Println("Ghép ảnh thành công!", buf.Bytes())
 }
